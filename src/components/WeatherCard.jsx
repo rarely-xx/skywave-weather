@@ -1,10 +1,16 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const WeatherCard = ({ data }) => {
   const { name, main, weather, wind } = data;
 
   return (
-    <div className="bg-white/20 backdrop-blur-md mt-6 p-6 rounded-2xl shadow-lg">
+    <motion.div
+      className="bg-white/20 backdrop-blur-md mt-6 p-6 rounded-2xl shadow-lg"
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+    >
       <h2 className="text-2xl font-semibold mb-2">{name}</h2>
       <p className="text-xl capitalize">{weather[0].description}</p>
 
@@ -21,7 +27,7 @@ const WeatherCard = ({ data }) => {
         <p>Humidity: {main.humidity}%</p>
         <p>Wind Speed: {wind.speed} m/s</p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

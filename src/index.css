@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Optional: smooth gradient background for Skywave */
+body {
+  @apply bg-gradient-to-br from-sky-400 to-indigo-600 text-white min-h-screen;
+}
